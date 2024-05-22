@@ -1,5 +1,5 @@
 @media (min-width: 1280px) {
-  .container {
+  section .container, footer .container {
     max-width: 1140px; }
 
   .grid-section .container {
@@ -104,7 +104,7 @@
   .btn-default {
     font-size: 16px;
     height: 50px;
-    line-height: 50px;
+    line-height: 48px;
     padding: 0 30px; }
 
   .btn-reserve {
@@ -136,9 +136,6 @@
 
   .btn-arrow {
     font-size: 16px; }
-
-  .home-banner .info {
-    font-size: 30px; }
 
   .cta-block .content {
     padding: 80px 13% 60px; }
@@ -172,7 +169,10 @@
     margin-bottom: 16px; }
 
   .grid-section .right {
-    width: 100%; } }
+    width: 100%; }
+
+  .lading-banner h1 {
+    font-size: 44px; } }
 @media (max-width: 991px) {
   .top-line .top-menu {
     display: none !important; }
@@ -441,7 +441,51 @@
     width: 100%; }
 
   .banner-404 .img-1 {
-    left: -30px; } }
+    left: -30px; }
+
+  .lading-banner .right {
+    margin-top: 30px; }
+
+  .lading-banner .right .text {
+    position: relative; }
+
+  .lading-banner .left {
+    min-height: inherit;
+    padding: 0; }
+
+  .lading-banner {
+    padding: 150px 0 50px; }
+
+  .lading-banner .bg img {
+    width: 100%; }
+
+  .lading-banner .bg:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background: rgba(0, 0, 0, 0.8); }
+
+  .lading-banner .right .text h6 {
+    font-size: 24px; }
+
+  .dot-big-down .row {
+    padding: 0; }
+
+  .card-4x .item {
+    width: calc(50% - 8px); }
+
+  .card-4x .content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+  .contact-info .info-wrap {
+    margin-top: 40px; }
+
+  .contact-info {
+    padding: 50px 0 10px; } }
 @media (max-width: 767px) {
   .home-banner h1 {
     font-size: 44px; }
@@ -677,5 +721,33 @@
     padding-top: 70px; }
 
   .banner-404 .img-3 {
-    right: 7%; } }
+    right: 7%; }
+
+  .lading-banner .row {
+    padding: 0 15px; }
+
+  .lading-banner .right .text {
+    width: 100%; }
+
+  .lading-banner h1 {
+    font-size: 36px; }
+
+  .card-4x .item {
+    width: 100%; }
+
+  .card-4x .row {
+    padding: 0 15px; }
+
+  .contact-banner .row {
+    padding: 0 15px; }
+
+  .contact-info .form-wrap {
+    padding: 40px 20px; }
+
+  .contact-info .info-wrap {
+    padding: 0 15px; }
+
+  h3 {
+    font-size: 28px; } }
+
 /*# sourceMappingURL=responsive.css.map */

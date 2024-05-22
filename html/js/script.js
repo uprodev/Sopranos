@@ -75,4 +75,22 @@ jQuery(document).ready(function ($) {
       item.slideUp();
     }
   });
+
+  //select
+  $('.select-block select').niceSelect();
+
+  //slider
+  var swiperVacancies = new Swiper(".vacancies-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    pagination: {
+      el: ".vacancies-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".vacancies-next",
+      prevEl: ".vacancies-prev",
+    },
+
+  });
 });
