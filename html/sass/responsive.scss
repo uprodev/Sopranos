@@ -191,6 +191,9 @@
   .text-default .cta-block-inner{
     padding: 25px 20px;
   }
+  .text-default .link-line .sos-wrap p{
+    display: none;
+  }
 }
 
 @media (max-width:991px) {
@@ -877,5 +880,21 @@
   }
   .default-form{
     grid-gap: 15px;
+  }
+  .text-default .link-wrap{
+    justify-content: center!important;
+    grid-gap: 15px;
+  }
+  .text-default .link-line .link-wrap{
+    width: 100%;
+    justify-content: center;
+  }
+  .text-default .soc-list{
+    width: 100%;
+    justify-content: center;
+    margin:15px auto 0;
+  }
+  .text-default  .sos-wrap{
+    margin: auto;
   }
 }
