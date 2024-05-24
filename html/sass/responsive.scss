@@ -185,7 +185,12 @@
   .lading-banner h1 {
     font-size: 44px;
   }
-
+  .text-default .aside .item{
+    padding: 25px 20px;
+  }
+  .text-default .cta-block-inner{
+    padding: 25px 20px;
+  }
 }
 
 @media (max-width:991px) {
@@ -366,11 +371,11 @@
   .img-text p{
     width: 100%;
   }
-  .img-text .dot {
+  .img-text .dot, .vacancies .dot {
     width: 80px;
     height: 80px;
   }
-  .img-text .dot span {
+  .img-text .dot span, .vacancies .dot span {
     font-size: 16px;
   }
   .dot-down .dot {
@@ -519,6 +524,37 @@
   .contact-info{
     padding: 50px 0 10px;
   }
+  .vacancies .item{
+    width: calc(50% - 8px);
+  }
+  .vacancies-slider .swiper-slide{
+    display: block;
+    width: 500px;
+    figure{
+      width: 100px;
+      height: 150px;
+      float: left;
+      margin: 0 20px 20px 0;
+      min-height: inherit;
+    }
+  }
+  .vacancies-slider .swiper-slide .text{
+    padding: 20px;
+    width: 100%;
+  }
+  .vacancies-slider .swiper-slide h6{
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .text-default .main{
+    padding: 0;
+  }
+  .text-default .aside{
+    padding: 50px 0 0;
+  }
+  .text-default{
+    padding: 70px 0 0;
+  }
 }
 
 @media (max-width:767px) {
@@ -615,6 +651,27 @@
   }
   .text-section{
     padding: 80px 0;
+  }
+  .vacancies-slider-wrap .nav-wrap .p-wrap{
+    display: none!important;
+  }
+  .vacancies-slider-wrap .nav-wrap{
+    justify-content: center!important;
+  }
+  .vacancies-slider-wrap .title{
+    margin-bottom: 20px;
+  }
+  .vacancies-slider-wrap .top-wrap{
+    margin-bottom: 40px;
+  }
+  .card-4x + .vacancies {
+    margin-top: 50px;
+  }
+  .vacancies{
+    padding: 50px 0 50px;
+  }
+  .vacancies-slider-wrap{
+    padding: 70px 0 50px;
   }
 }
 
@@ -776,5 +833,49 @@
   }
   h3{
     font-size: 28px;
+  }
+  .vacancies .row{
+    padding: 0 15px;
+  }
+  .vacancies .item{
+    width: 100%;
+  }
+  .vacancies-slider-wrap .row{
+    padding: 0 15px;
+  }
+  .vacancies-slider .swiper-slide .text p{
+    font-size: 16px;
+  }
+  .vacancies-slider .swiper-slide{
+    width: 300px;
+  }
+  .banner-mini .row{
+    padding: 0 15px;
+  }
+  .text-default .row{
+    padding: 0 15px;
+  }
+  .text-default .cta-block-inner .wrap{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .text-default .cta-block-inner .btn-wrap{
+    width: 100%;
+  }
+  .banner-mini .content{
+    padding-bottom: 50px;
+  }
+  .popup-default{
+    padding: 40px 25px;
+  }
+  .popup-default .fancybox-close-small{
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+  }
+  .default-form{
+    grid-gap: 15px;
   }
 }

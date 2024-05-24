@@ -91,6 +91,18 @@ jQuery(document).ready(function ($) {
       nextEl: ".vacancies-next",
       prevEl: ".vacancies-prev",
     },
+  });
 
+  $(".fancybox").fancybox({
+    touch:false,
+    autoFocus:false,
+
+  });
+
+  //file
+  $('input:file').change(function(){
+    $this = $(this);
+    $name = $this.val().replace('C:\\fakepath\\', '');
+    $('#file').text($name).show();
   });
 });
