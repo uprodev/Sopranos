@@ -2194,4 +2194,27 @@ input[type=number] {
 .pb-230 {
   padding-bottom: 230px; }
 
+.default-form .input-wrap-submit {
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.after-text {
+  width: calc(100% - 250px);
+  margin-top: -55px; }
+  .after-text p {
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    color: rgba(255, 255, 255, 0.5); }
+    .after-text p a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: underline; }
+      .after-text p a:hover {
+        color: #fff; }
+
 /*# sourceMappingURL=styles.css.map */

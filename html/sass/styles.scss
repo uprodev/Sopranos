@@ -2535,3 +2535,30 @@ input[type=number] {
 .pb-230{
   padding-bottom: 230px;
 }
+
+
+.default-form .input-wrap-submit{
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.after-text{
+  width: calc(100% - 250px);
+  margin-top: -55px;
+  p{
+    margin: 0!important;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    color: rgba(255, 255, 255, 0.5);
+    a{
+      color: rgba(#fff, 0.5);
+      text-decoration: underline;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
