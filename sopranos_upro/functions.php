@@ -3,6 +3,7 @@
 // show_admin_bar( false );
 
 require_once 'inc/cpt.php';
+require_once 'inc/ajax.php';
 
 add_action('wp_enqueue_scripts', 'load_style_script');
 function load_style_script(){
@@ -27,6 +28,19 @@ function load_style_script(){
 	wp_enqueue_script('my-nice-select', get_stylesheet_directory_uri() . '/js/jquery.nice-select.min.js', array(), false, true);
 	wp_enqueue_script('my-script', get_stylesheet_directory_uri() . '/js/script.js', array(), false, true);
 	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js', array(), false, true);
+
+
+	$read_more_text = '';
+	$content = get_field('content');
+	if ($content) {
+		foreach (get_field('content') as $item) {
+			if($item['acf_fc_layout'] == 'vacatures_overview') $read_more_text = $item['read_more'];
+		}
+	}
+	$data_add = array(
+		'read_more_text' => $read_more_text,
+	);
+	wp_localize_script('my-add', 'php_vars_add', $data_add);
 }
 
 
@@ -80,6 +94,6 @@ add_filter('acfe/flexible/thumbnail', 'my_acf_layout_thumbnail', 10, 3);
 function my_acf_layout_thumbnail($thumbnail, $field, $layout){
 
     // Must return an URL or Attachment ID
-    return get_stylesheet_directory_uri() . '/img/acf/' . $layout['name'] . '.png';
+	return get_stylesheet_directory_uri() . '/img/acf/' . $layout['name'] . '.png';
 
 }

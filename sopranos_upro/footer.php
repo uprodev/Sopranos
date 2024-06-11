@@ -9,7 +9,7 @@
 
           <?php if ($field['image_left']): ?>
             <figure>
-              <?= wp_get_attachment_image($field['ID'], 'full') ?>
+              <?= wp_get_attachment_image($field['image_left']['ID'], 'full') ?>
             </figure>
           <?php endif ?>
           

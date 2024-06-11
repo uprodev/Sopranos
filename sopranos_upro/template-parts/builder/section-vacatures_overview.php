@@ -24,59 +24,54 @@ if($args['row']):
 
 				</div>
 
-				<?php if ($is_default || $is_custom): ?>
+				<?php if ($is_default): ?>
+
+					<div class="content p-0 d-flex flex-wrap" id="response_vacancies">
+
+						<?php 
+						$args = array(
+							'post_type' => 'vacature', 
+							'posts_per_page' => 3,
+							'post_status' => 'publish',
+							'post__in' => wp_list_pluck($default, 'ID'),
+							'orderby' => 'post__in',
+							'paged' => get_query_var('paged')
+						);
+						$wp_query = new WP_Query($args); 
+						?>
+						<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
+							<?php get_template_part('parts/content', 'vacancy', ['image_id' => get_post_thumbnail_id(), 'title' => get_the_title(), 'content' => get_the_excerpt(), 'icon_and_text' => get_field('contract_time'), 'link_url' => get_permalink(), 'link_title' => $read_more]) ?>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+					</div>
+
+					<?php if ( $wp_query->max_num_pages > 1 ) { ?>
+						<script> var this_page = 1; </script>
+
+						<div class="btn-wrap-full text-center">
+							<a href="#" class="btn-border load_vacancies" data-param-posts='<?php echo serialize($wp_query->query_vars); ?>' data-max-pages='<?php echo $wp_query->max_num_pages; ?>'><?= $load_more_button_text ?></a>
+						</div>
+					<?php }  ?>
+
+
+				<?php else: ?>
+
 					<div class="content p-0 d-flex flex-wrap">
 
-						<?php if ($is_default): ?>
-							<div class="btn-wrap-full text-center">
-								<a href="#" class="btn-border"><?= $read_more ?></a>
-							</div>
-						<?php else: ?>
-							<?php foreach ($custom as $item): ?>
-								<div class="item">
+						<?php foreach ($custom as $item): ?>
+							<?php 
+							$image_id = $item['image'] ? $item['image']['ID'] : '';
+							$link_url = $item['read_more_button'] ? $item['read_more_button']['url'] : '';
+							$link_title = $item['read_more_button'] ? $item['read_more_button']['title'] : '';
+							$link_target = $item['read_more_button'] ? $item['read_more_button']['target'] : '';
 
-									<?php if ($item['image']): ?>
-										<figure>
-											<?= wp_get_attachment_image($item['image']['ID'], 'full') ?>
-										</figure>
-									<?php endif ?>
-									
-									<div class="text">
+							get_template_part('parts/content', 'vacancy', ['image_id' => $image_id, 'title' => $item['title'], 'content' => $item['content'], 'icon_and_text' => $item['icon_and_text'], 'link_url' => $link_url, 'link_title' => $link_title, 'link_target' => $link_target]); 
+							?>
+						<?php endforeach ?>
 
-										<?php if ($item['title']): ?>
-											<h6><?= $item['title'] ?></h6>
-										<?php endif ?>
-
-										<?php if ($item['content']): ?>
-											<?= $item['content'] ?>
-										<?php endif ?>
-
-										<?php if ($item['icon_and_text']): ?>
-											<p class="time">
-
-												<?php if ($item['icon_and_text']['icon']): ?>
-													<i class="<?= $item['icon_and_text']['icon'] ?>"></i>
-												<?php endif ?>
-
-												<?php if ($item['icon_and_text']['text']): ?>
-													<?= $item['icon_and_text']['text'] ?>
-												<?php endif ?>
-
-											</p>
-										<?php endif ?>
-
-										<?php if ($item['read_more_button']): ?>
-											<div class="btn-wrap">
-												<a href="<?= $item['read_more_button']['url'] ?>" class="btn-default"<?php if($item['read_more_button']['target']) echo ' target="_blank"' ?>><?= $item['read_more_button']['title'] ?></a>
-											</div>
-										<?php endif ?>
-
-									</div>
-								</div>
-							<?php endforeach ?>
-						<?php endif ?>
-						
 					</div>
+
 				<?php endif ?>
 
 				<?php if ($dotted_circle): ?>
@@ -84,7 +79,7 @@ if($args['row']):
 						<span><?= $dotted_circle ?></span>
 					</div>
 				<?php endif ?>
-				
+
 			</div>
 		</div>
 	</section>

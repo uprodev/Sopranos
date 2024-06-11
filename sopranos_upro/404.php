@@ -44,14 +44,16 @@
 				<div class="btn-wrap">
 
 					<?php if ($field = get_field('cta_button_404', 'option')): ?>
-						<a href="<?= $field['url'] ?>" class="btn-default<?php if(get_field('is_popup_404', 'option')) echo ' fancybox button_popup' ?>"<?php if($field['target']) echo ' target="_blank"' ?>><i class="fas fa-long-arrow-left"></i><?= $field['title'] ?></a>
+
+						<?php get_template_part('parts/button', null, ['button' => get_field('cta_button_404', 'option'), 'is_popup' => get_field('is_popup_404', 'option'), 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left']) ?>
+
+						<?php get_template_part('parts/content', 'popup', ['is_popup' => get_field('is_popup_404', 'option'), 'popup_title' => get_field('popup_title_404', 'option'), 'popup_text' => get_field('popup_text_404', 'option'), 'popup_text_below_form' => get_field('popup_text_below_form_404', 'option')]) ?>
+						
 					<?php endif ?>
 
 					<?php if ($field = get_field('optional_second_button_404', 'option')): ?>
 						<a href="<?= $field['url'] ?>" class="link"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
 					<?php endif ?>
-
-					<?php get_template_part('parts/content', 'popup', ['is_popup' => get_field('is_popup_404', 'option'), 'popup_title' => get_field('popup_title_404', 'option'), 'popup_text' => get_field('popup_text_404', 'option'), 'popup_text_below_form' => get_field('popup_text_below_form_404', 'option')]) ?>
 
 				</div>
 			<?php endif ?>

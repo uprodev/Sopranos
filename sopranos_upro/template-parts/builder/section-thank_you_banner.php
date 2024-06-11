@@ -45,10 +45,14 @@ if($args['row']):
 					<?php if ($cta_button || $optional_second_button): ?>
 						<div class="btn-wrap">
 
-							<?php get_template_part('parts/button', null, ['button' => $cta_button, 'is_popup' => $is_popup, 'class' => 'btn-default']) ?>
+							<?php if ($cta_button): ?>
+								
+								<?php get_template_part('parts/button', null, ['button' => $cta_button, 'is_popup' => $is_popup, 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left']) ?>
 
-							<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
 
+							<?php endif ?>
+							
 							<?php if ($optional_second_button): ?>
 								<a href="<?= $optional_second_button['url'] ?>" class="link"<?php if($optional_second_button['target']) echo ' target="_blank"' ?>><?= $optional_second_button['title'] ?></a>
 							<?php endif ?>

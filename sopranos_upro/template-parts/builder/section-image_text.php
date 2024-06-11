@@ -3,20 +3,25 @@ if($args['row']):
 	foreach($args['row'] as $key=>$arg) $$key = $arg; ?>
 
 	<?php 
-	switch ($dotted_circle_position) {
-		case 'Left Up':
-		$dot_class = ' dot-left dot-top';
-		break;
-		case 'Right Up':
-		$dot_class = ' dot-right dot-top';
-		break;
-		case 'Right Down':
-		$dot_class = ' dot-right dot-down';
-		break;
-		
-		default:
-		$dot_class = ' dot-left dot-down';
-		break;
+	$dot_class = '';
+	if ($is_show_dotted_circle && $dotted_circle_text) {
+		switch ($dotted_circle_position) {
+			case 'Left Up':
+			$dot_class = ' dot-left dot-top';
+			break;
+			case 'Left Down':
+			$dot_class = ' dot-left dot-down';
+			break;
+			case 'Right Up':
+			$dot_class = ' dot-right dot-top';
+			break;
+			case 'Right Down':
+			$dot_class = ' dot-right dot-down';
+			break;
+			
+			default:
+			break;
+		}
 	}
 	?>
 

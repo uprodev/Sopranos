@@ -2216,7 +2216,7 @@ input[type=number] {
   border-radius: 4px;
   color: #fff;
   background: #00a0d2;
-  bottom: -50px;
+  bottom: -100px;
   left: 0;
   margin: 0;
 }
@@ -2225,6 +2225,16 @@ input[type=number] {
 }
 .wpcf7 form.sent .wpcf7-response-output {
   background: #46b450;
+}
+.contact-info .info-wrap p +ul{
+  margin-top: 20px;
+}
+.contact-info .info-wrap p +ul li{
+  font-weight: 700;
+}
+
+.img-text.dot-right.dot-down .row{
+  padding-bottom: 180px;
 }
 /*------------------END-POPUP-----------------------*/
 .pt-50 {
