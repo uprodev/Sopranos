@@ -248,16 +248,6 @@
   <?php endif ?>
 <?php endif ?>
 
-<div id="popup" class="popup-default" style="display: none;">
-  <div class="content">
-    <h3 id="popup_title"></h3>
-    <p id="popup_text"></p>
-    <div class="from-wrap">
-      <?= do_shortcode('[contact-form-7 id="95b3e4f" html_class="default-form"]') ?>
-    </div>
-  </div>
-</div>
-
 <?php wp_footer(); ?>
 </body>
 </html>

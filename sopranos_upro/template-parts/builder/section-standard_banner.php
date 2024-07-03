@@ -40,9 +40,9 @@ if($args['row']):
 							<?php if ($links_or_buttons == 'Buttons' && $buttons): ?>
 								<?php foreach ($buttons as $index => $item): ?>
 									<?php if ($item['link']): ?>
-										<a href="<?= $item['link']['url'] ?>" class="<?= $index == 0 ? 'btn-default' : 'btn-border' ?><?php if($item['is_popup']) echo ' fancybox button_popup' ?>"<?php if($item['link']['target']) echo ' target="_blank"' ?>><?= $item['link']['title'] ?></a>
+										<a href="<?= $item['is_popup'] ? '#popup-' . $args['index'] . '-' . ($index + 1) : $item['link']['url'] ?>" class="<?= $index == 0 ? 'btn-default' : 'btn-border' ?><?php if($item['is_popup']) echo ' fancybox button_popup' ?>"<?php if($item['link']['target']) echo ' target="_blank"' ?>><?= $item['link']['title'] ?></a>
 										
-										<?php get_template_part('parts/content', 'popup', ['is_popup' => $item['is_popup'], 'popup_title' => $item['popup_title'], 'popup_text' => $item['popup_text'], 'popup_text_below_form' => $item['popup_text_below_form']]) ?>
+										<?php get_template_part('parts/content', 'popup', ['is_popup' => $item['is_popup'], 'popup_title' => $item['popup_title'], 'popup_text' => $item['popup_text'], 'popup_form' => $item['popup_form'], 'popup_text_below_form' => $item['popup_text_below_form'], 'index' => $args['index'] . '-' . ($index + 1)]) ?>
 										
 									<?php endif ?>
 								<?php endforeach ?>

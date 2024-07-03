@@ -21,9 +21,9 @@ if($args['row']):
 						<?php if ($button): ?>
 							<div class="btn-wrap">
 
-								<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-border']) ?>
+								<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-border', 'index' => $args['index']]) ?>
 
-								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_form' => $popup_form, 'popup_text_below_form' => $popup_text_below_form, 'index' => $args['index']]) ?>
 
 							</div>
 						<?php endif ?>

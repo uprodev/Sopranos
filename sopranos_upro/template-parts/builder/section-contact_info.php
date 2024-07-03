@@ -48,7 +48,7 @@ if($args['row']):
 								
 								<?php if ($location['button']): ?>
 									<div class="btn-wrap">
-										<a href="<?= $location['is_popup'] ? '#popup' : $location['button']['url'] ?>" class="btn-border<?php if($location['is_popup']) echo ' fancybox button_popup' ?>"<?php if($location['button']['target']) echo ' target="_blank"' ?>>
+										<a href="<?= $location['is_popup'] ? '#popup-' . $args['index'] : $location['button']['url'] ?>" class="btn-border<?php if($location['is_popup']) echo ' fancybox button_popup' ?>"<?php if($location['button']['target']) echo ' target="_blank"' ?>>
 											<?= $location['button']['title'] ?>
 
 											<?php if ($location['button_icon']): ?>
@@ -57,7 +57,7 @@ if($args['row']):
 											
 										</a>
 
-										<?php get_template_part('parts/content', 'popup', ['is_popup' => $location['is_popup'], 'popup_title' => $location['popup_title'], 'popup_text' => $location['popup_text'], 'popup_text_below_form' => $location['popup_text_below_form']]) ?>
+										<?php get_template_part('parts/content', 'popup', ['is_popup' => $location['is_popup'], 'popup_title' => $location['popup_title'], 'popup_text' => $location['popup_text'], 'popup_form' => $location['popup_form'], 'popup_text_below_form' => $location['popup_text_below_form'], 'index' => $args['index']]) ?>
 
 									</div>
 								<?php endif ?>

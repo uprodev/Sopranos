@@ -20,14 +20,14 @@ function load_style_script(){
 	wp_enqueue_style('my-style-main', get_stylesheet_directory_uri() . '/style.css');
 
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js', array(), false, true);
-	wp_enqueue_script('my-sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js', array(), false, true);
-	wp_enqueue_script('my-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js', array(), false, true);
-	wp_enqueue_script('my-swiper', get_stylesheet_directory_uri() . '/js/swiper.js', array(), false, true);
-	wp_enqueue_script('my-fancybox', get_stylesheet_directory_uri() . '/js/jquery.fancybox.min.js', array(), false, true);
-	wp_enqueue_script('my-nice-select', get_stylesheet_directory_uri() . '/js/jquery.nice-select.min.js', array(), false, true);
-	wp_enqueue_script('my-script', get_stylesheet_directory_uri() . '/js/script.js', array(), false, true);
-	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js', array(), false, true);
+	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js');
+	wp_enqueue_script('my-sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
+	wp_enqueue_script('my-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js');
+	wp_enqueue_script('my-swiper', get_stylesheet_directory_uri() . '/js/swiper.js');
+	wp_enqueue_script('my-fancybox', get_stylesheet_directory_uri() . '/js/jquery.fancybox.min.js');
+	wp_enqueue_script('my-nice-select', get_stylesheet_directory_uri() . '/js/jquery.nice-select.min.js');
+	wp_enqueue_script('my-script', get_stylesheet_directory_uri() . '/js/script.js');
+	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js');
 
 
 	$read_more_text = '';
@@ -96,4 +96,20 @@ function my_acf_layout_thumbnail($thumbnail, $field, $layout){
     // Must return an URL or Attachment ID
 	return get_stylesheet_directory_uri() . '/img/acf/' . $layout['name'] . '.png';
 
+}
+
+
+function checkArrayForValues($arr) {
+    foreach ($arr as $value) {
+        if (is_array($value)) {
+            if (checkArrayForValues($value)) {
+                return true;
+            }
+        } else {
+            if (!empty($value)) {
+                return true;
+            }
+        }
+    }
+    return false;
 }

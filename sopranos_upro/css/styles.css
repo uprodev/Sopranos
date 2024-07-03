@@ -2046,7 +2046,7 @@ input[type=number] {
     margin-top: 80px;
     grid-gap: 20px; }
     .text-default .cta-block-inner .wrap {
-      width: calc(100% - 250px); }
+      width: calc(100% - 275px); }
     .text-default .cta-block-inner h4 {
       font-size: 32px;
       font-weight: bold;
@@ -2236,7 +2236,15 @@ input[type=number] {
 .img-text.dot-right.dot-down .row{
   padding-bottom: 180px;
 }
-/*------------------END-POPUP-----------------------*/
+
+.img-text.img-text-revers.dot-right.dot-down .row{
+  padding-bottom: 0;
+}
+.text-img-bg .bg{
+  background: url("../img/bg-2.jpg")no-repeat center;
+  background-size: cover;
+}
+  /*------------------END-POPUP-----------------------*/
 .pt-50 {
   padding-top: 50px; }
 

@@ -45,9 +45,9 @@
 
 					<?php if ($field = get_field('cta_button_404', 'option')): ?>
 
-						<?php get_template_part('parts/button', null, ['button' => get_field('cta_button_404', 'option'), 'is_popup' => get_field('is_popup_404', 'option'), 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left']) ?>
+						<?php get_template_part('parts/button', null, ['button' => get_field('cta_button_404', 'option'), 'is_popup' => get_field('is_popup_404', 'option'), 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left'], 'index' => 404) ?>
 
-						<?php get_template_part('parts/content', 'popup', ['is_popup' => get_field('is_popup_404', 'option'), 'popup_title' => get_field('popup_title_404', 'option'), 'popup_text' => get_field('popup_text_404', 'option'), 'popup_text_below_form' => get_field('popup_text_below_form_404', 'option')]) ?>
+						<?php get_template_part('parts/content', 'popup', ['is_popup' => get_field('is_popup_404', 'option'), 'popup_title' => get_field('popup_title_404', 'option'), 'popup_text' => get_field('popup_text_404', 'option'), 'popup_text_below_form' => get_field('popup_text_below_form_404', 'option'), 'index' => 404]) ?>
 						
 					<?php endif ?>
 

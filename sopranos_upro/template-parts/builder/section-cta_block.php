@@ -49,7 +49,7 @@ if($args['row']):
 
 							<?php if ($button): ?>
 								<div class="btn-wrap">
-									<a href="<?= $is_popup ? '#popup' : $button['url'] ?>" class="btn-reserve<?php if($is_popup) echo ' fancybox button_popup' ?>"<?php if($button['target']) echo ' target="_blank"' ?>>
+									<a href="<?= $is_popup ? '#popup-' . $args['index'] : $button['url'] ?>" class="btn-reserve<?php if($is_popup) echo ' fancybox button_popup' ?>"<?php if($button['target']) echo ' target="_blank"' ?>>
 
 										<?php if ($button_icon): ?>
 											<span class="img">
@@ -67,7 +67,7 @@ if($args['row']):
 									</a>
 								</div>
 
-								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_form' => $popup_form, 'popup_text_below_form' => $popup_text_below_form, 'index' => $args['index']]) ?>
 
 							<?php endif ?>
 							

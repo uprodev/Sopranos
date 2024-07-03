@@ -22,9 +22,9 @@ if($args['row']):
 						<div class="btn-wrap d-flex flex-wrap align-items-center w-100">
 
 							<?php if ($button): ?>
-								<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-default']) ?>
+								<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-default', 'index' => $args['index']]) ?>
 
-								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_form' => $popup_form, 'popup_text_below_form' => $popup_text_below_form, 'index' => $args['index']]) ?>
 							<?php endif ?>
 
 							<?php if ($text_link): ?>

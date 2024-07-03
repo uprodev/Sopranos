@@ -61,23 +61,23 @@ if($args['row']):
 								<div class="line"></div>
 								<div class="link-line d-flex justify-content-between flex-wrap">
 
-									<?php if ($item['back_link_text']): ?>
+									<?php if ($back_link_text = $item['custom_default'] == 'Custom' ? $item['back_link_text'] : get_field('back_link_text_s', 'option')): ?>
 										<div class="link-wrap">
-											<a href="#" onclick="history.back();"><i class="fas fa-chevron-left"></i><?= $item['back_link_text'] ?></a>
+											<a href="#" onclick="history.back();"><i class="fas fa-chevron-left"></i><?= $back_link_text ?></a>
 										</div>
 									<?php endif ?>
 									
-									<div class="sos-wrap d-flex align-items-center">
+									<?php if (($share_icons = $item['custom_default'] == 'Custom' ? $item['share_icons'] : get_field('share_icons_s', 'option')) && checkArrayForValues($share_icons)): ?>
+										<div class="sos-wrap d-flex align-items-center">
 
-										<?php if ($item['share_vacancy_text']): ?>
-											<p><?= $item['share_vacancy_text'] ?></p>
-										<?php endif ?>
+											<?php if ($share_vacancy_text = $item['custom_default'] == 'Custom' ? $item['share_vacancy_text'] : get_field('share_text_s', 'option')): ?>
+												<p><?= $share_vacancy_text ?></p>
+											<?php endif ?>
 
-										<?php if ($item['share_icons']): ?>
 											<ul class="soc-list d-flex">
 
-												<?php foreach ($item['share_icons'] as $item_2): ?>
-													<?php if ($item_2['icon']): ?>
+												<?php foreach ($share_icons as $item_2): ?>
+													<?php if ($item_2['icon'] && $item_2['url']): ?>
 														<li>
 															<a href="<?= $item_2['url'] ?>" target="_blank">
 																<i class="<?= $item_2['icon'] ?>"></i>
@@ -87,9 +87,9 @@ if($args['row']):
 												<?php endforeach ?>
 
 											</ul>
-										<?php endif ?>
+										</div>
+									<?php endif ?>
 
-									</div>
 								</div>
 								
 								<?php 

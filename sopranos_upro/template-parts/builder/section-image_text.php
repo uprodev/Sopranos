@@ -68,9 +68,9 @@ if($args['row']):
 					<?php if ($button || $text_link): ?>
 						<div class="btn-wrap d-flex align-items-center">
 
-							<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-default']) ?>
+							<?php get_template_part('parts/button', null, ['button' => $button, 'is_popup' => $is_popup, 'class' => 'btn-default', 'index' => $args['index']]) ?>
 
-							<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+							<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_form' => $popup_form, 'popup_text_below_form' => $popup_text_below_form, 'index' => $args['index']]) ?>
 
 							<?php if ($text_link): ?>
 								<a href="<?= $text_link['url'] ?>" class="link"<?php if($text_link['target']) echo ' target="_blank"' ?>><?= $text_link['title'] ?></a>

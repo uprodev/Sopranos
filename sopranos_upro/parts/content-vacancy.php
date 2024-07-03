@@ -13,7 +13,7 @@
 		<?php endif ?>
 
 		<?php if ($args['content']): ?>
-			<?= $args['content'] ?>
+			<p><?= $args['content'] ?></p>
 		<?php endif ?>
 
 		<?php if ($args['icon_and_text']): ?>

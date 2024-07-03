@@ -11,3 +11,63 @@ Theme Name: Sopranos
 .default-form .input-file input{
   height: 56px;
 }
+
+.menu-block .sub-title:before {
+  top: 4px;
+  bottom: -4px;
+}
+
+.label{
+  font-weight: 600;
+}
+
+.text-img-bg .bg iframe{
+  height: 200%;
+  object-fit: cover;
+}
+
+.cta-block .btn-reserve{
+  background-color: #892613;
+  color: #fff;
+}
+
+.cta-block .btn-reserve img{
+  filter: invert(1);
+}
+.cta-block .btn-reserve .img {
+  background: rgba(255, 255, 255, 0.2);
+  top: 4px;
+}
+
+footer .right ul li a i{
+  min-width: 18px;
+}
+
+footer .bottom{
+  margin-top: 30px;
+}
+
+.top-line .row{
+  background: rgba(54, 54, 54, 0.6);
+}
+
+.banner-ups .bottom .item{
+  width: calc(25% - 12px);
+  flex: inherit;
+}
+
+.banner-ups .bottom{
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px){
+  .banner-ups .bottom .item {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 575px){
+  .banner-ups .bottom .item {
+    width: 100%;
+  }
+}

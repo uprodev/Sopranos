@@ -47,9 +47,9 @@ if($args['row']):
 
 							<?php if ($cta_button): ?>
 								
-								<?php get_template_part('parts/button', null, ['button' => $cta_button, 'is_popup' => $is_popup, 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left']) ?>
+								<?php get_template_part('parts/button', null, ['button' => $cta_button, 'is_popup' => $is_popup, 'class' => 'btn-default', 'left_arrow' => 'fas fa-long-arrow-left', 'index' => $args['index']]) ?>
 
-								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_text_below_form' => $popup_text_below_form]) ?>
+								<?php get_template_part('parts/content', 'popup', ['is_popup' => $is_popup, 'popup_title' => $popup_title, 'popup_text' => $popup_text, 'popup_form' => $popup_form, 'popup_text_below_form' => $popup_text_below_form, 'index' => $args['index']]) ?>
 
 							<?php endif ?>
 							
